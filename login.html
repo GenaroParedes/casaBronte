@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CasaBronte - Iniciar Sesión</title>
+    <link rel="stylesheet" href="./src/css/login.css">
+</head>
+<body>
+    <div class="flex">
+        <div class="container">
+            <div class="form-container" id="login-form">
+                <h2>Iniciar Sesión</h2>
+                <div class="error-message" id="login-error"></div>
+                <div class="role-selection">
+                    <label>
+                        <input type="radio" name="login-role" value="user" checked> Usuario
+                    </label>
+                    <label>
+                        <input type="radio" name="login-role" value="admin"> Administrador
+                    </label>
+                </div>
+                <input type="email" id="login-email" placeholder="Correo electrónico" required>
+                <input type="password" id="login-password" placeholder="Contraseña" required>
+                <button onclick="login()">Iniciar Sesión</button>
+                <div class="toggle-form">
+                    ¿No tienes cuenta? <a href="#" onclick="toggleForm('register')">Regístrate</a>
+                </div>
+            </div>
+    
+            <div class="form-container" id="register-form" style="display:none;">
+                <h2>Registrarse</h2>
+                <div class="error-message" id="register-error"></div>
+                <input type="text" id="register-name" placeholder="Nombre completo" required>
+                <input type="email" id="register-email" placeholder="Correo electrónico" required>
+                <input type="password" id="register-password" placeholder="Contraseña" required>
+                <input type="password" id="register-confirm-password" placeholder="Confirmar Contraseña" required>
+                <button onclick="register()">Registrarse</button>
+                <div class="toggle-form">
+                    ¿Ya tienes cuenta? <a href="#" onclick="toggleForm('login')">Iniciar Sesión</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="users">
+            <div class="container">
+                <h3>Para loguearse como Admin:</h3>
+                <p><span>Admin: </span>admin@casabronte.com</p>
+                <p><span>Password: </span>admin123</p>
+            </div>
+            <div class="container">
+                <h3>Para loguearse como User:</h3>
+                <p><span>User: </span>usuario@ejemplo.com</p>
+                <p><span>Password: </span>usuario123</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/js/users.js"></script>
+    <script src="./src/js/login.js"></script>
+</body>
+</html>

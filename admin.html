@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CasaBronte - Panel de Administración</title>
+    <link rel="stylesheet" href="./src/css/admin.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h1>CasaBronte Admin</h1>
+        <ul class="sidebar-menu">
+            <li><a href="#" onclick="showSection('productos')">Gestionar Productos</a></li>
+            <li><a href="#" onclick="showSection('ventas')">Ventas</a></li>
+            <li><a href="#" onclick="showSection('usuarios')">Usuarios</a></li>
+            <li><a href="login.html" onclick="logout()">Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div id="productos" class="dashboard-section">
+            <h2>Gestionar Productos</h2>
+            <form id="producto-form">
+                <div class="form-group">
+                    <label>Nombre del Producto</label>
+                    <input type="text" id="producto-nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea id="producto-descripcion" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Precio</label>
+                    <input type="number" id="producto-precio" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>Imagen</label>
+                    <input type="file" id="producto-imagen" accept="image/*" required>
+                </div>
+                <button type="button" class="btn" onclick="agregarProducto()">Agregar Producto</button>
+            </form>
+
+            <h3>Productos Actuales</h3>
+            <div id="lista-productos" class="product-list">
+                <!-- Productos se mostrarán aquí -->
+            </div>
+        </div>
+
+        <div id="ventas" class="dashboard-section" style="display:none;">
+            <h2>Registro de Ventas</h2>
+            <table id="tabla-ventas">
+                <!-- Ventas se mostrarán aquí -->
+            </table>
+        </div>
+
+        <div id="usuarios" class="dashboard-section" style="display:none;">
+            <h2>Gestión de Usuarios</h2>
+            <table id="tabla-usuarios">
+                <!-- Usuarios se mostrarán aquí -->
+            </table>
+        </div>
+    </div>
+
+    <script src="./src/js/users.js"></script>
+    <script src="./src/js/admin.js"></script>
+</body>
+</html>
